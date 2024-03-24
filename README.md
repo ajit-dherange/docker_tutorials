@@ -1,4 +1,4 @@
-# Docker Torials
+# Docker Tutorials
 
 Collection of programs is called as software project
 
