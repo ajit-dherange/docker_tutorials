@@ -97,19 +97,19 @@ $ exit
 
 Docker Commands
 -----------------------
-#see docker info 
+### see docker info 
 $ docker info
 
-# To see docker images execute below command
+### To see docker images execute below command
 $ docker images
 
-# Pulling hello-world docker image 
+### Pulling hello-world docker image 
 $ docker pull hello-world
 
-# see docker image 
+### see docker image 
 $ docker images
 
-# Running hello-world docker image 
+### Running hello-world docker image 
 $ docker run hello-world
 
 
@@ -247,7 +247,7 @@ Syntax :    COPY <source> <destination>
 
 Example : 
 
-# copying war file from target directory to tomcat/webapps directory
+### copying war file from target directory to tomcat/webapps directory
 
 COPY target/maven-web-app.war  /usr/local/tomcat/webapp/maven-web-app.war
 
@@ -323,10 +323,10 @@ CMD echo "Kubernetes"
 RUN echo "Java"
 
 
-# build image using docker file
+### build image using docker file
 $ docker build -t myimage1 .
 
-# Run image
+### Run image
 $ docker run myimage1 
 
 Note: CMD instruction we can override using runtime CMD
@@ -334,10 +334,10 @@ Note: CMD instruction we can override using runtime CMD
 #It will print only date (CMD will not execute)
 $ docker run myimage1 date
 
-# We can change docker file name
+### We can change docker file name
 $ mv Dockerfile Dockerfile_1
 
-# Creating Docker image using Dockerfile_One
+### Creating Docker image using Dockerfile_One
 $ docker build -f Dockerfile_1 -t myimage2 .
 
 
