@@ -83,15 +83,17 @@ Conclusion
 Install Docker in Amazon Linux
 ------------------------------------
 $ sudo yum update -y
+
 $ sudo yum install docker -y
+
 $ sudo service docker start
 
-# add user to docker group by executing below command
+### add user to docker group by executing below command
 $ sudo usermod -aG docker ec2-user
 
 $ docker info
 
-#Restart the session
+### Restart the session
 $ exit
 
 
@@ -155,7 +157,6 @@ Docker Engine or Docker Daemon or Docker Host
 ---------------------------------------------
 
 It is a software using which we can create images and containers
-
 
 $ vi Dockerfile
 
