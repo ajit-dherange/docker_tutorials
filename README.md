@@ -1,6 +1,6 @@
 # Docker Tutorials
 
-# Part I: Docker Basics: What is Docker and Basic Docker Commands
+# Part I: Docker Basics - What is Docker and Basic Docker Commands
 
 Collection of programs is called as software project
 
@@ -113,7 +113,7 @@ $ docker images
 $ docker run hello-world
 
 
-# Part II: Docker Basics: Create Docker File and Images
+# Part II: Docker Basics - Create Docker File and Images
 
 Create account in docker hub
 ------------------------------
@@ -409,7 +409,7 @@ VOLUME
 -> It is used for data storage
 
 
-## Part III: Docker Advance: Create Real Application Docker Images and Deploy to Kubernates cluetrs (AKS / EKS / ECS )
+# Part III: Docker Advance - Create Real Application Docker Images and Deploy to Kubernates cluetrs (AKS / EKS / ECS )
 
 ### 1. Create Docker Image for NodeJS app
 	
