@@ -446,7 +446,7 @@ docker attach demo  ### Get the command line of the installed container:
 sudo dnf remove docker  ### Docker Uninstallation (optional)
 ``` 
 
-**Create NodeJS App Image:**
+### Create NodeJS App Image:
 ``` 
 $ git clone https://github.com/Anshuman2121/react_app.git
 $ touch Dockerfile
@@ -472,5 +472,35 @@ $ docker tag ajit ardher/ajit
 # Push the tagged image into docker hub
  $ docker push ardher/ajit
 ``` 
+### Create ,NET App Image:
+
+1) git clone https://github.com/descope-sample-apps/dotnet-4.8-sample-app
+
+2) To build a Docker image for the Java "Hello World" application, you'll need a Dockerfile
+```
+# Use an official OpenJDK image to build the Java app
+FROM openjdk:11-jdk-slim AS build
+# Set the working directory
+WORKDIR /app
+# Copy the Java source code to the container
+COPY HelloWorld.java /app/
+# Compile the Java source file
+RUN javac HelloWorld.java
+# Set the command to run the Java program
+CMD ["java", "HelloWorld"]
+```
+
+3) Now, from the directory where your Dockerfile and HelloWorld.java are located, run the following command to build the Docker image:
+
+   docker build -t descope-sample-app:latest .
+
+4) After building the Docker image, you can run it with:
+
+   docker run -d -p 8080:80 --name descope-sample-app descope-sample-app:latest
+
+5) Browse app in web browser
+   
+   http://localhost:8080
+
 
 
