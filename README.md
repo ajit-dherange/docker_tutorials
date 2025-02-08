@@ -1,6 +1,6 @@
 # Docker Tutorials
 
-## Part I: Docker Basics: What is Docker and Basic Docker Commands
+# Part I: Docker Basics: What is Docker and Basic Docker Commands
 
 Collection of programs is called as software project
 
@@ -35,8 +35,6 @@ Collection of programs is called as software project
 
 -> To deploy application to these many enivornments we need to take of all the softwars required to run our application in all environments. It is very difficult task.
 
-
-
 Virtualization
 ---------------
 
@@ -51,7 +49,6 @@ Virtualization
 -> System performance will become slow in this process
 
 -> To overcome the problems of Virtualization we are going for Containerization concept
-
 
 Containerization
 ------------------
@@ -71,7 +68,6 @@ Containerization
 
 -> Using Docker image we can create docker container and we can execute it
 
-
 Conclusion
 ---------------
 
@@ -80,7 +76,6 @@ Conclusion
 -> Docker will take care of application and application dependencies for execution
 
 -> Deployments into multiple environments will become easy if we use Docker containers concept
-
 
 Install Docker in Amazon Linux
 ------------------------------------
@@ -118,7 +113,7 @@ $ docker images
 $ docker run hello-world
 
 
-## Part II: Docker Basics: Create Docker File and Images
+# Part II: Docker Basics: Create Docker File and Images
 
 Create account in docker hub
 ------------------------------
@@ -166,10 +161,15 @@ It is a software using which we can create images and containers
 $ vi Dockerfile
 
 FROM ubuntu
+
 RUN echo "Welcome to Docker Session"
+
 RUN echo "Welcome to Kubernetes Sessions"
+
 CMD echo "DevOps"
+
 CMD echo "AWS"
+
 RUN echo "DevOps wit AWS"
 
 
@@ -190,6 +190,7 @@ $ docker tag raju mraju25/raju
  $ docker login
 
   username:
+  
   password:
 
  Login successful
