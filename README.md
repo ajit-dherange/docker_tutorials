@@ -199,17 +199,17 @@ $ docker tag raju mraju25/raju
 
  $ docker push mraju25/raju
 
-============================================================
+=================================================================
 
--> Dockerfile contains instructions to build docker images
+**-> Dockerfile contains instructions to build docker images**
 
--> Dockerfile will use domain specific language keywords
+**-> Dockerfile will use domain specific language keywords**
 
--> Docker engin will process dockerfile instructions from top to bottom
+**-> Docker engin will process dockerfile instructions from top to bottom**
 
 Dockerfile keywords
 -------------------
-
+```
 FROM
 MAINTAINER
 COPY
@@ -223,7 +223,7 @@ USER
 WORKDIR
 EXPOSE
 VOLUME
-
+```
 
 FROM
 ======
@@ -232,11 +232,11 @@ FROM : It indicates base image to run our application. On top of base image we w
 Syntax : FROM <IMAGE-NAME>
 
 Example : 
-
+```
 FROM tomcat:9.2
 FROM java:jdk-1.8.0
 FROM mysql
-
+```
 
 MAINTAINER
 ============
@@ -315,20 +315,15 @@ Note: There is no use of writing multiple CMD instructions in Dockerfile
 
 Sample Dockerfile
 ==================
+```
 FROM ubuntu
-
 MAINTAINER  Ajit
-
 RUN echo "DevOps"
-
 RUN echo "AWS"
-
 CMD echo "Docker"
-
 CMD echo "Kubernetes"
-
 RUN echo "Java"
-
+```
 
 ### build image using docker file
 $ docker build -t myimage1 .
@@ -367,14 +362,12 @@ Ex: WORKDIR <DIR-PATH>
 
 Note: The Dockerfile instructions which are available after WORKDIR those instructions will be proess from given working directory
 
-
 ENV
 ====
 
 -> ENV is used to set Environment Variables
 
 Ex:  ENV <key> <value>
-
 
 LABEL
 ======
@@ -384,7 +377,6 @@ LABEL
 -> It is used to add meta data for our image
 
 Ex: LABEL branchName  release
-
 
 ARG
 =====
@@ -400,13 +392,11 @@ Note: We can pass argument values in RUNTIME
 
 $ docker build -t myimage1 --build-arg branch=feature
 
-
 USER
 ====
 ->  We can set user for an image / container
 
 Note: After USER instruction, remaining instructions will be processed with given USER
-
 
 EXPOSE
 ========
