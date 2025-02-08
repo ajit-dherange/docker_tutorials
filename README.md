@@ -1,5 +1,7 @@
 # Docker Tutorials
 
+## Part I: Docker Basics: What is Docker and Basic Docker Commands
+
 Collection of programs is called as software project
 
 -> Software project contains several components
@@ -52,7 +54,7 @@ Virtualization
 
 
 Containerization
---------------------
+------------------
 -> It is used to package all the softwares and application code in one container for execution
 
 -> Container will take care of everything which is required to run our application
@@ -98,7 +100,8 @@ $ exit
 
 
 Docker Commands
------------------------
+---------------
+
 ### see docker info 
 $ docker info
 
@@ -114,6 +117,8 @@ $ docker images
 ### Running hello-world docker image 
 $ docker run hello-world
 
+
+## Part II: Docker Basics: Create Docker File and Images
 
 Create account in docker hub
 ------------------------------
@@ -311,7 +316,7 @@ Sample Dockerfile
 ==================
 FROM ubuntu
 
-MAINTAINER  Raju
+MAINTAINER  Ajit
 
 RUN echo "DevOps"
 
@@ -351,7 +356,6 @@ Note: CMD instructions we can override where as ENTRYPOINT instructions we can't
 Example"
 
 ENTRYPOINT [ "echo", "Welcome to DevOps classes "]
-
 
 
 WORKDIR
@@ -409,11 +413,73 @@ EXPOSE
 
 -> It is just like a documentation to understand container running port number
 
-
 VOLUME
 ========
 -> It is used for data storage
 
 
+## Part III: Docker Advance: Create Real Application Docker Images and Deploy to Kubernates cluetrs (AKS / EKS / ECS )
+
+### 1. Create Docker Image for NodeJS app
+	
+**Pre-requisite:**
+
+1) NodeJS
+```
+   npm install -g npm
+   sudo npm install -g npm
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+   . ~/.nvm/nvm.sh
+   nvm install --lts
+   npm -v
+   node -e "console.log('Running Node.js ' + process.version)"
+
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+```
+2) Docker
+```
+sudo dnf update
+sudo dnf install docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+
+sudo usermod -aG docker jenkins
+newgrp docker
+
+docker pull ubuntu
+docker create -it --name demo ubuntu  ### Create container:
+docker start demo  ### Start container
+docker attach demo  ### Get the command line of the installed container:
+
+sudo dnf remove docker  ### Docker Uninstallation (optional)
+``` 
+
+**Create NodeJS App Image:**
+``` 
+$ git clone https://github.com/Anshuman2121/react_app.git
+$ touch Dockerfile
+$ vi Dockerfile
+$ cat Dockerfile
+FROM node:20.9.0-alpine
+WORKDIR /app
+COPY . /app
+RUN npm install
+RUN npm run build
+```
+
+**Build docker image using dockerfile**
+```
+# Build docker image
+$ docker build -t ajit .
+# docker images
+$ docker images
+# Tag docker image
+$ docker tag ajit ardher/ajit
+# Login into docker account
+ $ docker login
+# Push the tagged image into docker hub
+ $ docker push ardher/ajit
+``` 
 
 
